@@ -6,7 +6,7 @@
 // //       debugShowCheckedModeBanner: false,
 // //       home: Scaffold(
 
-// //         // ۱. نوار بالای صفحه همراه با آیکون سرچ
+// //       
 // //         appBar: AppBar(
 // //           backgroundColor: Colors.orange,
 // //           title: Text('My App'),
@@ -149,147 +149,164 @@
 //     );
 //   }
 // }
+// import 'package:flutter/material.dart';
+
+// void main() {
+//   runApp(InstagramApp());
+// }
+
+
+// class InstagramApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       home: InstagramFeedPage(),
+//     );
+//   }
+// }
+
+
+// class InstagramFeedPage extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       backgroundColor: Colors.white,
+
+    
+//       appBar: AppBar(
+//         backgroundColor: Colors.white,
+//         elevation: 0.5,
+//         title: Text(
+//           'Instagram',
+//           style: TextStyle(
+//             color: Colors.black,
+//             fontSize: 26,
+//             fontWeight: FontWeight.bold,
+//             fontStyle: FontStyle.italic,
+//           ),
+//         ),
+//         actions: [
+//           IconButton(
+//             icon: Icon(Icons.favorite_border, color: Colors.black),
+//             onPressed: () {},
+//           ),
+//           IconButton(
+//             icon: Icon(Icons.chat_bubble_outline, color: Colors.black),
+//             onPressed: () {},
+//           ),
+//         ],
+//       ),
+
+    
+//       body: ListView.builder(
+//         itemCount: 5, 
+//         itemBuilder: (context, index) {
+//           return InstagramPostItem();
+//         },
+//       ),
+//     );
+//   }
+// }
+
+
+// class InstagramPostItem extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Column(
+//       crossAxisAlignment: CrossAxisAlignment.start,
+//       children: [
+        
+//         Padding(
+//           padding: EdgeInsets.all(10),
+//           child: Row(
+//             children: [
+//               CircleAvatar(
+//                 backgroundColor: Colors.grey[300],
+//                 radius: 18,
+//                 child: Icon(Icons.person, color: Colors.white),
+//               ),
+//               SizedBox(width: 10),
+//               Text('mrm11-22-8', style: TextStyle(fontWeight: FontWeight.bold)),
+//               Spacer(),
+//               Icon(Icons.more_vert),
+//             ],
+//           ),
+//         ),
+
+        
+//         Container(
+//           height: 300,
+//           width: double.infinity,
+//           color: Colors.grey[200],
+//           child: Image.asset("assets/images/name.jpg"),
+//         ),
+
+        
+//         Row(
+//           children: [
+//             IconButton(
+//               icon: Icon(Icons.favorite_border),
+//               onPressed: () {},
+//             ),
+//             IconButton(
+//               icon: Icon(Icons.mode_comment_outlined),
+//               onPressed: () {},
+//             ),
+//             IconButton(
+//               icon: Icon(Icons.send_outlined),
+//               onPressed: () {},
+//             ),
+//             Spacer(),
+//             IconButton(
+//               icon: Icon(Icons.bookmark_border),
+//               onPressed: () {},
+//             ),
+//           ],
+//         ),
+
+    
+//         Padding(
+//           padding: EdgeInsets.symmetric(horizontal: 12),
+//           child: Column(
+//             crossAxisAlignment: CrossAxisAlignment.start,
+//             children: [
+//               Text(
+//                 '۱,۲۵۰ لایک',
+//                 style: TextStyle(fontWeight: FontWeight.bold),
+//               ),
+//               SizedBox(height: 5),
+//               Row(
+//                 children: [
+//                   Text(
+//                     'user_name_simple ',
+//                     style: TextStyle(fontWeight: FontWeight.bold),
+//                   ),
+//                   Text('این یک پست آزمایشی ساده در فلاتر است...'),
+//                 ],
+//               ),
+//               SizedBox(height: 15), // فاصله تا پست بعدی
+//             ],
+//           ),
+//         ),
+//       ],
+//     );
+//   }
+// }
+
 import 'package:flutter/material.dart';
+import 'InstagramFeedPage.dart'; 
 
 void main() {
-  runApp(InstagramApp());
+  runApp(MyApp());
 }
 
-
-class InstagramApp extends StatelessWidget {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: InstagramFeedPage(),
-    );
-  }
-}
-
-
-class InstagramFeedPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-
-    
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0.5,
-        title: Text(
-          'Instagram',
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 26,
-            fontWeight: FontWeight.bold,
-            fontStyle: FontStyle.italic,
-          ),
-        ),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.favorite_border, color: Colors.black),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: Icon(Icons.chat_bubble_outline, color: Colors.black),
-            onPressed: () {},
-          ),
-        ],
-      ),
-
-    
-      body: ListView.builder(
-        itemCount: 5, 
-        itemBuilder: (context, index) {
-          return InstagramPostItem();
-        },
-      ),
-    );
-  }
-}
-
-
-class InstagramPostItem extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        
-        Padding(
-          padding: EdgeInsets.all(10),
-          child: Row(
-            children: [
-              CircleAvatar(
-                backgroundColor: Colors.grey[300],
-                radius: 18,
-                child: Icon(Icons.person, color: Colors.white),
-              ),
-              SizedBox(width: 10),
-              Text('mrm11-22-8', style: TextStyle(fontWeight: FontWeight.bold)),
-              Spacer(),
-              Icon(Icons.more_vert),
-            ],
-          ),
-        ),
-
-        
-        Container(
-          height: 300,
-          width: double.infinity,
-          color: Colors.grey[200],
-          child: Image.asset("assets/images/name.jpg"),
-        ),
-
-        
-        Row(
-          children: [
-            IconButton(
-              icon: Icon(Icons.favorite_border),
-              onPressed: () {},
-            ),
-            IconButton(
-              icon: Icon(Icons.mode_comment_outlined),
-              onPressed: () {},
-            ),
-            IconButton(
-              icon: Icon(Icons.send_outlined),
-              onPressed: () {},
-            ),
-            Spacer(),
-            IconButton(
-              icon: Icon(Icons.bookmark_border),
-              onPressed: () {},
-            ),
-          ],
-        ),
-
-        ۴. بخش تعداد لایک‌ها و توضیحات پست
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 12),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                '۱,۲۵۰ لایک',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-              SizedBox(height: 5),
-              Row(
-                children: [
-                  Text(
-                    'user_name_simple ',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  Text('این یک پست آزمایشی ساده در فلاتر است...'),
-                ],
-              ),
-              SizedBox(height: 15), // فاصله تا پست بعدی
-            ],
-          ),
-        ),
-      ],
     );
   }
 }
