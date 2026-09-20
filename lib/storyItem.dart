@@ -8,14 +8,14 @@ Widget buildStoryItem(String name) {
       children: [
         CircleAvatar(
           radius: 34,
-          backgroundColor: Colors.pink,
+          backgroundColor: Colors.green,
           child: CircleAvatar(
             radius: 31,
             backgroundColor: Colors.white,
             child: CircleAvatar(
               radius: 28,
-              backgroundColor: Colors.grey[400],
-              child: Icon(Icons.person, color: Colors.white, size: 30),
+              // backgroundColor: Colors.grey[400],
+              // child: Icon(Icons.person, color: Colors.white, size: 30),
             ),
           ),
         ),

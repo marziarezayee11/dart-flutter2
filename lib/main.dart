@@ -294,8 +294,25 @@
 //   }
 // }
 
-import 'package:flutter/material.dart';
-import 'InstagramFeedPage.dart'; 
+// import 'package:flutter/material.dart';
+// import 'InstagramFeedPage.dart'; 
+
+// void main() {
+//   runApp(MyApp());
+// }
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       home: InstagramFeedPage(),
+//     );
+//   }
+// }
+//
+    import 'package:flutter/material.dart';
+import 'InstagramFeedPage.dart'; // فایل فعلی شما
 
 void main() {
   runApp(MyApp());
@@ -306,7 +323,76 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: InstagramFeedPage(),
+      // حالا به جای رفتن مستقیم به فید، به wrapper می‌رویم تا منوی پایین نمایش داده شود
+      home: MainWrapper(), 
     );
   }
 }
+
+// این ویجت جدید را در همینجا یا در یک فایل جدید بسازید
+class MainWrapper extends StatefulWidget {
+  @override
+  _MainWrapperState createState() => _MainWrapperState();
+}
+
+class _MainWrapperState extends State<MainWrapper> {
+  int _currentIndex = 0;
+
+  // لیست صفحاتی که با زدن روی هر آیکون نشان داده می‌شوند
+  final List<Widget> _pages = [
+    InstagramFeedPage(), // صفحه فعلی شما به عنوان صفحه اول (خانه) قرار می‌گیرد
+    Center(child: Text('صفحه جستجو')),
+    Center(child: Text('صفحه پست جدید')),
+    Center(child: Text('صفحه ریلز')),
+    Center(child: Text('صفحه پروفایل')),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: _pages[_currentIndex], // نمایش صفحه بر اساس آیکون انتخاب شده
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentIndex,
+        onTap: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: Colors.white,
+        selectedItemColor: Colors.black,
+        unselectedItemColor: Colors.black54,
+        showSelectedLabels: false,   // حذف متن زیر آیکون‌ها برای شباهت به اینستاگرام
+        showUnselectedLabels: false, // حذف متن زیر آیکون‌ها
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home_outlined),
+            activeIcon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            activeIcon: Icon(Icons.search),
+            label: 'Search',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.add_box_outlined),
+            activeIcon: Icon(Icons.add_box),
+            label: 'Add',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.movie_creation_outlined),
+            activeIcon: Icon(Icons.movie_creation),
+            label: 'Reels',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_circle_outlined),
+            activeIcon: Icon(Icons.account_circle),
+            label: 'Profile',
+          ),
+        ],
+      ),
+    );
+  }
+}
+
