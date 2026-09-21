@@ -16,40 +16,40 @@ class InstagramFeedPage extends StatelessWidget {
   ];
 
 
-  // final List posts = [
-  //    {
-  //     'username': 'coding_life',
-  //     'likes': '۳,۱۰۰ لایک',
-  //     'caption': 'برنامه‌نویسی ترکیبی از هنر و منطق است'
-  //   },   {
-  //     'username': 'coding_life',
-  //     'likes': '۳,۱۰۰ لایک',
-  //     'caption': 'برنامه‌نویسی ترکیبی از هنر و منطق است'
-  //   },
-  //   {
-  //     'username': 'coding_life',
-  //     'likes': '۳,۱۰۰ لایک',
-  //     'caption': 'برنامه‌نویسی ترکیبی از هنر و منطق است'
-  //   },
-  //      {
-  //     'username': 'coding_life',
-  //     'likes': '۳,۱۰۰ لایک',
-  //     'caption': 'برنامه‌نویسی ترکیبی از هنر و منطق است'
-  //   },
-  //      {
-  //     'username': 'coding_life',
-  //     'likes': '۳,۱۰۰ لایک',
-  //     'caption': 'برنامه‌نویسی ترکیبی از هنر و منطق است'
-  //   },   {
-  //     'username': 'coding_life',
-  //     'likes': '۳,۱۰۰ لایک',
-  //     'caption': 'برنامه‌نویسی ترکیبی از هنر و منطق است'
-  //   },   {
-  //     'username': 'coding_life',
-  //     'likes': '۳,۱۰۰ لایک',
-  //     'caption': 'برنامه‌نویسی ترکیبی از هنر و منطق است'
-  //   },
-  // ];
+  final List posts = [
+     {
+      'username': 'coding_life',
+      'likes': '۳,۱۰۰ لایک',
+      'caption': 'برنامه‌نویسی ترکیبی از هنر و منطق است'
+    },   {
+      'username': 'coding_life',
+      'likes': '۳,۱۰۰ لایک',
+      'caption': 'برنامه‌نویسی ترکیبی از هنر و منطق است'
+    },
+    {
+      'username': 'coding_life',
+      'likes': '۳,۱۰۰ لایک',
+      'caption': 'برنامه‌نویسی ترکیبی از هنر و منطق است'
+    },
+       {
+      'username': 'coding_life',
+      'likes': '۳,۱۰۰ لایک',
+      'caption': 'برنامه‌نویسی ترکیبی از هنر و منطق است'
+    },
+       {
+      'username': 'coding_life',
+      'likes': '۳,۱۰۰ لایک',
+      'caption': 'برنامه‌نویسی ترکیبی از هنر و منطق است'
+    },   {
+      'username': 'coding_life',
+      'likes': '۳,۱۰۰ لایک',
+      'caption': 'برنامه‌نویسی ترکیبی از هنر و منطق است'
+    },   {
+      'username': 'coding_life',
+      'likes': '۳,۱۰۰ لایک',
+      'caption': 'برنامه‌نویسی ترکیبی از هنر و منطق است'
+    },
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -99,19 +99,19 @@ class InstagramFeedPage extends StatelessWidget {
           Divider(color: Colors.grey[300], height: 1),
 
           
-          // Expanded(
-          //   child: ListView.builder(
-          //     itemCount: posts.length,
-          //     itemBuilder: (context, index) {
+          Expanded(
+            child: ListView.builder(
+              itemCount: posts.length,
+              itemBuilder: (context, index) {
             
-                // return buildPostItem(
-                //   posts[index]['username']!,
-                //   posts[index]['likes']!,
-                //   posts[index]['caption']!,
-                // );
-              // },
-          //   ),
-          // ),
+                return buildPostItem(
+                  posts[index]['username']!,
+                  posts[index]['likes']!,
+                  posts[index]['caption']!,
+                );
+              },
+            ),
+          ),
         ],
       ),
     );

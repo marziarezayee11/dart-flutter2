@@ -312,7 +312,7 @@
 // }
 //
     import 'package:flutter/material.dart';
-import 'InstagramFeedPage.dart'; // فایل فعلی شما
+import 'InstagramFeedPage.dart';
 
 void main() {
   runApp(MyApp());
@@ -323,13 +323,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // حالا به جای رفتن مستقیم به فید، به wrapper می‌رویم تا منوی پایین نمایش داده شود
+    
       home: MainWrapper(), 
     );
   }
 }
 
-// این ویجت جدید را در همینجا یا در یک فایل جدید بسازید
+
 class MainWrapper extends StatefulWidget {
   @override
   _MainWrapperState createState() => _MainWrapperState();
@@ -338,9 +338,9 @@ class MainWrapper extends StatefulWidget {
 class _MainWrapperState extends State<MainWrapper> {
   int _currentIndex = 0;
 
-  // لیست صفحاتی که با زدن روی هر آیکون نشان داده می‌شوند
+
   final List<Widget> _pages = [
-    InstagramFeedPage(), // صفحه فعلی شما به عنوان صفحه اول (خانه) قرار می‌گیرد
+    InstagramFeedPage(), 
     Center(child: Text('صفحه جستجو')),
     Center(child: Text('صفحه پست جدید')),
     Center(child: Text('صفحه ریلز')),
@@ -350,7 +350,7 @@ class _MainWrapperState extends State<MainWrapper> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _pages[_currentIndex], // نمایش صفحه بر اساس آیکون انتخاب شده
+      body: _pages[_currentIndex], 
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         onTap: (index) {
@@ -362,8 +362,8 @@ class _MainWrapperState extends State<MainWrapper> {
         backgroundColor: Colors.white,
         selectedItemColor: Colors.black,
         unselectedItemColor: Colors.black54,
-        showSelectedLabels: false,   // حذف متن زیر آیکون‌ها برای شباهت به اینستاگرام
-        showUnselectedLabels: false, // حذف متن زیر آیکون‌ها
+        showSelectedLabels: false,   
+        showUnselectedLabels: false,
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home_outlined),

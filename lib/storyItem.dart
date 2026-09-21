@@ -13,9 +13,9 @@ Widget buildStoryItem(String name) {
             radius: 31,
             backgroundColor: Colors.white,
             child: CircleAvatar(
-              radius: 28,
-              // backgroundColor: Colors.grey[400],
-              // child: Icon(Icons.person, color: Colors.white, size: 30),
+              radius: 29,
+              backgroundColor: Colors.grey[400],
+              child: Icon(Icons.person, color: Colors.white, size: 30),
             ),
           ),
         ),
